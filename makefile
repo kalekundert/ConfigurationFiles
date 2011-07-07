@@ -1,8 +1,8 @@
 install:
 	rm -rf ~/.vim ~/.vimrc
-	ln -s ~/cfg/vim ~/.vim
-	ln -s ~/cfg/vim/setup.vim ~/.vimrc
+	ln -s /home/kale/cfg/vim ~/.vim
+	ln -s /home/kale/cfg/vim/setup.vim ~/.vimrc
 
 	rm -rf ~/.zsh ~/.zshrc
-	ln -s ~/cfg/zsh ~/.zsh
-	ln -s ~/cfg/zsh/setup.sh ~/.zshrc
+	ln -s /home/kale/cfg/zsh ~/.zsh
+	ln -s /home/kale/cfg/zsh/setup.sh ~/.zshrc

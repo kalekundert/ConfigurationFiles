@@ -3,6 +3,8 @@ if exists("did_load_filetypes")
 endif
 
 augroup filetypedetect
+    autocmd BufRead,BufNewFile *.sh     setfiletype zsh
+
     autocmd BufRead,BufNewFile *.s      setfiletype mips
     autocmd BufRead,BufNewFile *.txt    setfiletype rest
     autocmd BufRead,BufNewFile *.tex    setfiletype tex

@@ -20,5 +20,3 @@ export MSMBUILDERHOME=/usr/local
 export LD_LIBRARY_PATH=$MSMBUILDERHOME/Clusterer/lib:$LD_LIBRARY_PATH
 export PATH=$MSMBUILDERHOME/Clusterer/bin:$PATH
 export PH=/home/kale/lib/msmbuilder/PythonTools_V2
-
-
