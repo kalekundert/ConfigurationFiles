@@ -24,8 +24,10 @@ continued=' ... '
 
 # Choose a color for the prompt.  Normal users are yellow, the super-user
 # is red, and remote users are blue.
-[[ `/usr/bin/whoami` = $admin ]] && color=$red || color=$yellow
-[[ `/bin/hostname` = $host ]] && color=$color || color=$blue
+color=$yellow
+
+[[ `/bin/hostname` = $host ]] || color=$blue
+[[ `/usr/bin/whoami` = $admin ]] && color=$red 
 
 # Choose a prompt string.  For local users, the prompt will just be the current
 # directory.  For remote users, the user and host names will also included.
