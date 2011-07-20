@@ -16,6 +16,13 @@ for FILE in *; do
     rm -f ~/.ssh/$FILE
     ln -s $ROOT/ssh/$FILE ~/.ssh
 
+    # You have to own the ~/.ssh/config file, so a symbolic link won't work.
+    # Instead, explicitly copy this file.
+    if [ $FILE -ef "config" ]; then
+        rm -f ~/.ssh/$FILE
+        cp $ROOT/ssh/$FILE ~/.ssh
+    fi
+
     [ $? -ne 0 ] && exit 1
 
 done
