@@ -21,6 +21,9 @@ for FILE in *; do
     if [ $FILE -ef "config" ]; then
         rm -f ~/.ssh/$FILE
         cp $ROOT/ssh/$FILE ~/.ssh
+
+        echo "rm -f ~/.ssh/$FILE" >&2
+        echo "cp $ROOT/ssh/$FILE ~/.ssh" >&2
     fi
 
     [ $? -ne 0 ] && exit 1
@@ -28,4 +31,4 @@ for FILE in *; do
 done
 
 # Return a success code if nothing failed.
-exit 0
+exit 1
