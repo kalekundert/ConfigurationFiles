@@ -1,0 +1,27 @@
+ForwardX11 yes
+ForwardAgent yes
+
+ServerAliveInterval 60
+
+IdentityFile ~/.ssh/identity
+
+host kxgames
+    User kale
+    Hostname kxgames.net
+
+host mountainview
+    User kale
+    Hostname theKunderts.net
+
+host alanine
+    User kale
+    Hostname 71.202.181.88
+
+host glutamate
+    User root
+    Port 2225
+    Hostname 71.202.181.88
+
+host grouproom
+    User MBF
+    Hostname 128.32.207.137
