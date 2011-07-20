@@ -13,17 +13,21 @@ cd ssh
 # these links cannot be created, give up and report failure.
 for FILE in *; do
 
-    rm -f ~/.ssh/$FILE
-    ln -s $ROOT/ssh/$FILE ~/.ssh
-
-    # You have to own the ~/.ssh/config file, so a symbolic link won't work.
-    # Instead, explicitly copy this file.
-    if [ $FILE -ef "config" ]; then
+    # SSH is fairly fussy about permissions and symbolic links.  It's better
+    # for ~/.ssh/config and ~/.ssh/authorized_keys to be real files owned by
+    # the user running the installation script.  
+    if [ $FILE -ef "config" ] || [ $FILE -ef "authorized_keys" ]; then
         rm -f ~/.ssh/$FILE
         cp $ROOT/ssh/$FILE ~/.ssh
 
-        echo "rm -f ~/.ssh/$FILE" >&2
-        echo "cp $ROOT/ssh/$FILE ~/.ssh" >&2
+        # Make these files read-only so that they cannot get out of sync.
+        chmod 444 ~/.ssh/$FILE
+
+    # The rest of the files can be symbolic links, since ssh doesn't
+    # directly use them.
+    else
+        rm -f ~/.ssh/$FILE
+        ln -s $ROOT/ssh/$FILE ~/.ssh
     fi
 
     [ $? -ne 0 ] && exit 1
@@ -31,4 +35,4 @@ for FILE in *; do
 done
 
 # Return a success code if nothing failed.
-exit 1
+exit 0
