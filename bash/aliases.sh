@@ -35,7 +35,7 @@ alias gvim='gvim 2> /dev/null'
 alias gview='gview 2> /dev/null'
 alias gvimdiff='gvimdiff 2> /dev/null'
 
-alias xd='od -t x1'
+alias wgs='watch git status'
 
 alias py=python
 alias python='python -W ignore'
@@ -49,6 +49,8 @@ alias pymolx='fork pymol -qxe'
 alias ja='java -ea'
 alias jc='javac -g'
 alias ju='java org.junit.runner.JUnitCore'
+
+alias xd='od -t x1'
 
 alias octave='octave -q'
 alias network='nm-tool | less'
