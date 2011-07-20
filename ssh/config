@@ -6,21 +6,21 @@ ServerAliveInterval 60
 IdentityFile ~/.ssh/identity
 
 host kxgames
-    User kale
     Hostname kxgames.net
 
 host mountainview
-    User kale
     Hostname theKunderts.net
 
 host alanine
-    User kale
     Hostname 71.202.181.88
 
-host glutamate
-    User root
-    Port 2225
+host cysteine:
     Hostname 71.202.181.88
+    Port 2224
+
+host glutamate
+    Hostname 71.202.181.88
+    Port 2225
 
 host grouproom
     User MBF
