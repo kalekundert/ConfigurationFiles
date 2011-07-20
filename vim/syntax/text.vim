@@ -1,5 +1,8 @@
-" Match any line terminated with a colon
-syn match textHeader ".*:$"
+" Lines that begin with a dollar sign are taken to be shell demonstrations.
+syntax match textShell '^\s*[$] .*$' contains=@NoSpell
 
-" Make the Header group bold
-highlight textHeader term=bold cterm=bold gui=bold
+" Strings within single-quotes should not be spell-checked.
+syntax region textVerbatim start="`" end="'" oneline contains=@NoSpell
+
+highlight textShell gui=italic cterm=bold term=bold
+
