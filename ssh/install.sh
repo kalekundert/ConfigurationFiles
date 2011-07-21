@@ -15,10 +15,13 @@ for FILE in *; do
 
     # SSH is fairly fussy about permissions and symbolic links.  It's better
     # for ~/.ssh/config and ~/.ssh/authorized_keys to be real files owned by
-    # the user running the installation script.
+    # the user running the installation script.  
     if [ $FILE -ef "config" ] || [ $FILE -ef "authorized_keys" ]; then
         rm -f ~/.ssh/$FILE
         cp $ROOT/ssh/$FILE ~/.ssh
+
+        # Make these files read-only so that they cannot get out of sync.
+        chmod 444 ~/.ssh/$FILE
 
     # The rest of the files can be symbolic links, since ssh doesn't
     # directly use them.
