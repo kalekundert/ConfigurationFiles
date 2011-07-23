@@ -17,6 +17,8 @@ alias po=popd
 alias back='cd ~-'
 alias here='cd -P .'
 
+alias xsu='exec su'
+
 alias :w=true
 alias :q=quit
 alias :wq=quit
