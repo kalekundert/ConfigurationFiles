@@ -14,11 +14,23 @@ host mountainview
 host alanine
     Hostname 71.202.181.88
 
-host cysteine:
+host cysteine
+    Hostname 71.202.181.88
+    Port 2221
+
+host aspartate
+    Hostname 71.202.181.88
+    Port 2222
+
+host glutamate
+    Hostname 71.202.181.88
+    Port 2223
+
+host phenylalanine
     Hostname 71.202.181.88
     Port 2224
 
-host glutamate
+host glycine
     Hostname 71.202.181.88
     Port 2225
 
