@@ -21,7 +21,7 @@ for FILE in *; do
         cp $ROOT/ssh/$FILE ~/.ssh
 
         # Make these files read-only so that they cannot get out of sync.
-        chmod 444 ~/.ssh/$FILE
+        chmod 400 ~/.ssh/$FILE
 
     # The rest of the files can be symbolic links, since ssh doesn't
     # directly use them.
