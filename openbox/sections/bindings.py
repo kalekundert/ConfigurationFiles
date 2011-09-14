@@ -1,7 +1,7 @@
 from xmlhelper import *
 
 class Keyboard(object):
-    def __init__(self, chain_quit_key=None):
+    def __init__(self, prefix='A-', chain_quit_key=None):
         document = make_document()
         keyboard = make_root(document, "keyboard")
 
@@ -9,12 +9,22 @@ class Keyboard(object):
             chain_quit = make_text(
                     document, keyboard, "chainQuitKey", chain_quit_key)
 
+        self.bindings = {}
+        self.prefix = prefix
+
         self.document = document
         self.element = keyboard
 
+    def bind(self, **bindings):
+        self.bindings.update(bindings)
+
     def write(self, path):
+        for key, action in self.bindings.items():
+            action.make(self.document, self.element, self.prefix + key)
+
         with open(path, 'w') as file:
-            self.document.writexml(file, indent="  ", addindent="  ", newl="\n")
+            self.document.writexml(
+                    file, indent="  ", addindent="  ", newl="\n")
 
 class Keybind(object):
     def __init__(self, parent, key, **arguments):
@@ -40,12 +50,9 @@ class Action(object):
         self.actions = [action] if action else []
         self.arguments = [arguments] if action else []
 
-    def make(self, parent, key):
+    def make(self, document, element, key):
         assert self.actions
         assert self.arguments
-
-        document = parent.document
-        element = parent.element
 
         keybind = make_element(document, element, "keybind", key=key)
         actions = zip(self.actions, self.arguments)
@@ -65,7 +72,14 @@ class Action(object):
         return self
 
 class Execute(Action):
-    def __init__(self, command):
+    def __init__(self, command, top=None, left=None, width=None, height=None):
+        arguments = (top, left, width, height)
+        empty = (None, None, None, None)
+
+        if not arguments == empty:
+            geometry = ' --geometry %dx%d+%d+%d' % (width, height, top, left)
+            command = command + geometry
+
         Action.__init__(self, "Execute", command=command)
 
 class Desktop(Action):

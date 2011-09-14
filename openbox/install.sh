@@ -1,2 +1,10 @@
 echo "Skipping openbox configuration."
-exit 0
+
+python $ROOT/compile.py
+
+rm ~/.config/openbox/rc.xml
+ln -s $ROOT/openbox/rc.xml ~/.config/openbox/rc.xml
+
+openbox --reconfigure
+
+exit $?
