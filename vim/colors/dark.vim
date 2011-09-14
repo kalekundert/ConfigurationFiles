@@ -57,8 +57,8 @@ highlight Cursor            guifg=Black                         guibg=White
 highlight LineNr            guifg=Black      ctermfg=Black      guibg=DarkGray   ctermbg=DarkGray
 highlight NonText           guifg=White                         gui=bold
 
-highlight Visual                                                guibg=DarkGray
-highlight Folded            guifg=Black      ctermfg=Black      guibg=DarkGray   ctermbg=DarkBlue
+highlight Visual            guifg=Black      ctermfg=BLACK      guibg=LightGray  ctermbg=LightGray
+highlight Folded            guifg=White      ctermfg=White      guibg=DarkBlue   ctermbg=DarkBlue
 highlight MatchParen                                            guibg=Gray 
 
 " Linked the less common groups to the basic ones

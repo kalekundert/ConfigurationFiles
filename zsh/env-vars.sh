@@ -1,10 +1,10 @@
-export PATH=.:/home/kale/bin:${PATH}
+export PATH=/home/kale/code/scripts:/home/kale/bin:${PATH}
 
 export EDITOR=/usr/bin/vim
 export BROWSER=/usr/bin/firefox
 
 export PYTHONSTARTUP=/home/kale/.pythonrc
-export PYTHONPATH=/home/kale/lib/python:/home/kale/lib/vim/pyscripts:/home/kale/kxg/
+export PYTHONPATH=/home/kale/code/utilities:/home/kale/lib/python:/home/kale/lib/vim/pyscripts
 
 export CLASSPATH=.:./bin/:/usr/share/java/
 export TEXINPUTS=/home/kale/lib/latex:

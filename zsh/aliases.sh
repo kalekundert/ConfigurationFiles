@@ -61,21 +61,6 @@ alias evince='fork evince'
 alias abiword='fork abiword'
 alias rhythmbox='fork rhythmbox'
 
-alias -s py=gvim
-alias -s java=gvim
-
-alias -s c=gvim
-alias -s cc=gvim
-alias -s cpp=gvim
-alias -s h=gvim
-alias -s hpp=gvim
-
-alias -s xml=gvim
-alias -s html=gvim
-
-alias -s txt=gvim
-alias -s tex=gvim
-
 function tmp {
     mv $1 ~/tmp/
 }

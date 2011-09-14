@@ -68,6 +68,8 @@ map <F1> <Esc>
 map! <F1> <Esc>
 map K <Nop>
 
+abbreviate {{{! {{{1
+
 retab
 filetype plugin indent on
 
