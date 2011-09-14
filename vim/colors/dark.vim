@@ -57,7 +57,7 @@ highlight Cursor            guifg=Black                         guibg=White
 highlight LineNr            guifg=Black      ctermfg=Black      guibg=DarkGray   ctermbg=DarkGray
 highlight NonText           guifg=White                         gui=bold
 
-highlight Visual            guifg=Black      ctermfg=BLACK      guibg=LightGray  ctermbg=LightGray
+highlight Visual            guifg=Black      ctermfg=Black      guibg=LightGray  ctermbg=LightGray
 highlight Folded            guifg=White      ctermfg=White      guibg=DarkBlue   ctermbg=DarkBlue
 highlight MatchParen                                            guibg=Gray 
 
